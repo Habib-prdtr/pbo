@@ -1,5 +1,6 @@
 <?php 
-require 'models/role_model2.php';
+require 'models/modelsRelasi/role_model2.php';
+
 
 $obj_role = [];
 $obj_role[] = new User(1,"Habib","Raja", 1 ,"Mengendalikan bumi");

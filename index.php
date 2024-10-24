@@ -10,6 +10,7 @@ require_once 'models/role_model.php';
         $modul = 'dashboard';
     }
 
+
     switch($modul) {
         case 'dashboard':
             include 'views/kosong.php';
@@ -29,6 +30,34 @@ require_once 'models/role_model.php';
 
                     //arahkan ke index.php
                     header("Location: index.php?modul=role");
+                    break;
+                
+                    case 'edit':
+                        if (isset($_GET['id'])) {
+                            $id = $_GET['id'];
+                            $role = $obj_role->getRoleById($id);
+                            include 'views/update.php';
+                        }
+                        break;
+        
+                    case 'update':
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            $id = $_POST['role_id'];
+                            $role_name = $_POST['role_name'];
+                            $role_description = $_POST['role_description'];
+                            $role_status = $_POST['role_status'];
+        
+                            $obj_role->updateRole($id, $role_name, $role_description, $role_status);
+                            header("Location: index.php?modul=role");
+                        }
+                        break;
+
+                case 'delete':
+                    if (isset($_GET['id'])) {
+                        $id = $_GET['id'];
+                        $obj_role->deleteRole($id);
+                        header("Location: index.php?modul=role");
+                    }
                     break;
 
                 default:

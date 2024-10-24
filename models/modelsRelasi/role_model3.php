@@ -1,6 +1,6 @@
 
 <?php 
-require_once(__DIR__ . '/../domain_object/node_role2.php');
+require_once 'domain_object/nodeRoleRelasi/node_role2.php';
 
 class User{
     public $KemampuanModel;

@@ -1,13 +1,11 @@
 <?php
-    require_once 'model/model_role.php';
+session_start();
+session_destroy();
+    require_once 'models/role_model.php';
 
     //create model dan view all
     
     $objRole = new modelRole();
-    $objRole->addRole("kasir", "kasir", 1);
-    $objRole->addRole("admin", "admin", 1);
-    $objRole->addRole("manager", "manager", 0);
-
     foreach ($objRole->getAllRoles() as $role){
         echo "id role : ".$role->role_id;
         echo "<br>";
@@ -15,14 +13,11 @@
         echo "<br>";
         echo "role description : ".$role->role_description;
         echo "<br>";
-        echo "role status : ".$role->status_peran;
+        echo "role status : ".$role->role_status;
         echo "<br>";
-
-    if(isset($_POST['submit_role'])){
-        $objRole = new modelRole();
-        $objRole->addRole($_POST['role_name'], $_POST['role_description'], $_POST['role_status']);
-
+    }
     //add new role
+    echo "<hr>";
 
     echo "========default data role============="."<br>";
     $objRole = new modelRole();
@@ -38,7 +33,7 @@
     }
     
 
-        echo "==================testing role=================";
+        echo "==================testing add role=================";
         echo "<br>";
         $objRole->addRole("new role","new role",1);
         $objRole->addRole(4, "new role", "new role", 1);
@@ -52,80 +47,69 @@
             echo "role status : ".$role->role_status;
             echo "<br>";
         }
+        echo "<hr>";
 
             //update
 
-        //     session_start();
-        //     session_destroy();
+            echo "========default Update data role============="."<br>";
+            $objRole = new modelRole();
+            foreach ($objRole->getAllRoles() as $role){
+            echo "id role : ".$role->role_id;
+            echo "<br>";
+            echo "role name : ".$role->role_name;
+            echo "<br>";
+            echo "role description : ".$role->role_description;
+            echo "<br>";
+            echo "role status : ".$role->role_status;
+            echo "<br>";
+        }
 
-        //     echo "========default data role============="."<br>";
-        //     $objRole = new modelRole();
-        //     foreach ($objRole->getRoles() as $role){
-        //     echo "id role : ".$role->id_peran;
-        //     echo "<br>";
-        //     echo "role name : ".$role->nama_peran;
-        //     echo "<br>";
-        //     echo "role description : ".$role->desc_peran;
-        //     echo "<br>";
-        //     echo "role status : ".$role->status_peran;
-        //     echo "<br>";
-        //     echo "role gaji : ".$role->gaji;
-        //     echo "<br>"."<hr>";
-        // }
+        echo "===============update data role================"."<br>";
+        $objRole->updateRole(1,"Habib", "new role", 1);
+        $objRole->updateRole(2, "Freya", "new role", 1);
+        foreach ($objRole->getAllRoles() as $role){
+            echo "id role : ".$role->role_id;
+            echo "<br>";
+            echo "role name : ".$role->role_name;
+            echo "<br>";
+            echo "role description : ".$role->role_description;
+            echo "<br>";
+            echo "role status : ".$role->role_status;
+            echo "<br>";
+        }
 
-        // echo "===============update data role================"."<br>";
-        // $objRole->updateRole(1,"agus", "new role", 1, 10000);
-        // $objRole->updateRole(2, "taka", "new role", 1, 10000);
-        // foreach ($objRole->getRoles() as $role){
-        //     echo "id role : ".$role->id_peran;
-        //     echo "<br>";
-        //     echo "role name : ".$role->nama_peran;
-        //     echo "<br>";
-        //     echo "role description : ".$role->desc_peran;
-        //     echo "<br>";
-        //     echo "role status : ".$role->status_peran;
-        //     echo "<br>";
-        //     echo "role gaji : ".$role->gaji;
-        //     echo "<br>"."<hr>";
-        // }
-
+        echo "<hr>";
         //delete
 
-        session_start();
-        session_destroy();
-
-        echo "========default data role============="."<br>";
+        echo "========default Delete data role============="."<br>";
         $objRole = new modelRole();
         foreach ($objRole->getAllRoles() as $role){
-        echo "id role : ".$role->id_peran;
+        echo "id role : ".$role->role_id;
         echo "<br>";
-        echo "role name : ".$role->nama_peran;
+        echo "role name : ".$role->role_name;
         echo "<br>";
-        echo "role description : ".$role->desc_peran;
+        echo "role description : ".$role->role_description;
         echo "<br>";
-        echo "role status : ".$role->status_peran;
-        echo "<br>";
-        echo "role gaji : ".$role->gaji;
-        echo "<br>"."<hr>";
+        echo "role status : ".$role->role_status;
+        echo "<br>"; 
     }
 
     echo "===============delete data role================"."<br>";
     $objRole->deleteRole(1);
    
     foreach ($objRole->getAllRoles() as $role){
-        echo "id role : ".$role->id_peran;
+        echo "id role : ".$role->role_id;
         echo "<br>";
-        echo "role name : ".$role->nama_peran;
+        echo "role name : ".$role->role_name;
         echo "<br>";
-        echo "role description : ".$role->desc_peran;
+        echo "role description : ".$role->role_description;
         echo "<br>";
-        echo "role status : ".$role->status_peran;
+        echo "role status : ".$role->role_status;
         echo "<br>";
-        echo "role gaji : ".$role->gaji;
-        echo "<br>"."<hr>";
+        
     }
-    }
-}
+    
+
         
     
 ?>
