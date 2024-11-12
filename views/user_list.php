@@ -21,7 +21,7 @@
                 <!-- Button to Insert New User -->
                 <div class="mb-4">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        <a href="views/user_input.php">Insert New User</a>
+                        <a href="index.php?modul=user&fitur=input">Insert New User</a>
                     </button>
                 </div>
 

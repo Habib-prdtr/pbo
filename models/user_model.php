@@ -95,5 +95,16 @@ class UserModel {
         }
         return null;
     }
+
+    public function getAllCustomers() {
+        $customers = [];
+        foreach ($this->users as $user) {
+            // Role ID 2 adalah User Customer
+            if ($user->role_id == 2) { 
+                $customers[] = $user;
+            }
+        }
+        return $customers;
+    }
 }
 ?>

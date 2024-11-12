@@ -22,7 +22,7 @@
                 <!-- Button untuk menambahkan Barang baru -->
                 <div class="mb-4">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        <a href="views/barang_input.php">Insert New Barang</a>
+                        <a href="index.php?modul=barang&fitur=input">Insert New Barang</a>
                     </button>
                 </div>
 

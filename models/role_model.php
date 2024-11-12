@@ -1,24 +1,26 @@
 <?php 
-require_once 'domain_object/node_role.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/smt3/pbo/domain_object/node_role.php';
+
 class modelRole{
     private $roles = [];
     private $nextId = 1;
 
     public function __construct()
-    {
-        if(isset($_SESSION['roles'])){
-            $this->roles = unserialize($_SESSION['roles']);
-            $this->nextId = count($this->roles)+1;
-        }else {
-            $this->initialiazeDefaultRole();
-        }
+{
+    if(isset($_SESSION['roles'])){
+        $this->roles = unserialize($_SESSION['roles']);
+        $this->nextId = count($this->roles)+1;
+    }else {
+        $this->initializeDefaultRole(); // perbaikan penamaan metode
     }
+}
 
-    public function initialiazeDefaultRole(){
-        $this->addRole("Admin", "Administrator", 1);
-        $this->addRole("User", "Costumer/member", 1);
-        $this->addRole("kasir", "Pembayaran", 0);
-    }
+private function initializeDefaultRole(){ // perbaikan penamaan metode
+    $this->addRole("Admin", "Administrator", 1);
+    $this->addRole("User", "Costumer/member", 1);
+    $this->addRole("Kasir", "Pembayaran", 0);
+}
+
 
     public function addRole($role_name, $role_description, $role_status){
         $peran = new Role($this->nextId++, $role_name, $role_description, $role_status);

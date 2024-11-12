@@ -22,7 +22,7 @@
             <!-- Formulir Input User -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">Input User</h2>
-                <form action="../index.php?modul=user&fitur=add" method="POST">
+                <form action="index.php?modul=user&fitur=add" method="POST">
                     <!-- Username -->
                     <div class="mb-4">
                         <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
@@ -34,7 +34,7 @@
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
                         <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Password" required>
                     </div>
-
+                    
                     <!-- Role -->
                     <div class="mb-4">
                         <label for="role" class="block text-gray-700 text-sm font-bold mb-2">Role:</label>
@@ -45,6 +45,7 @@
                             <?php } ?>
                         </select>
                     </div>
+
 
                     <!-- Submit Button -->
                     <div class="flex items-center justify-between">

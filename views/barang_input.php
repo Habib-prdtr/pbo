@@ -21,7 +21,7 @@
             <!-- Formulir Input Barang -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">Input Barang</h2>
-                <form action="../index.php?modul=barang&fitur=add" method="POST">
+                <form action="index.php?modul=barang&fitur=add" method="POST">
                     <!-- Nama Barang -->
                     <div class="mb-4">
                         <label for="nama" class="block text-gray-700 text-sm font-bold mb-2">Nama Barang:</label>
