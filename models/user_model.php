@@ -25,7 +25,9 @@ class UserModel {
         // Menggunakan ID role dari RoleModel
         $this->addUser ('Habib', 'habib123', 1); // Admin
         $this->addUser ('Freya', 'freya123', 2); // User
+        $this->addUser ('Raiden', 'raiden123', 2); // User
         $this->addUser ('Freda', 'freda123', 3); // Kasir
+        $this->addUser ('Rimuru', 'rimuru123', 3); // Kasir
     }
 
     public function addUser ($user_name, $user_password, $role_id) {

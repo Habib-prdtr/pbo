@@ -8,15 +8,20 @@ if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $error = false;
+    $error_user = false;
 
     $user = $userModel->getUserByName($username);
     
     if ($user && password_verify($password, $user->user_password)) {
-        $_SESSION["login"] = true;
-        $_SESSION["username"] = $user->user_name;
-        $_SESSION["role_id"] = $user->role_id; 
-        header("Location: index.php");
-        exit;
+        if ($user->role_id == 2) {
+            $error_user = true;
+        } else{
+            $_SESSION["login"] = true;
+            $_SESSION["username"] = $user->user_name;
+            $_SESSION["role_id"] = $user->role_id; 
+            header("Location: index.php");
+            exit;
+        }
     } else {
         $error = true;
     }
@@ -183,6 +188,10 @@ if (isset($_POST["submit"])) {
 
     <div class="login-container">
         <h1>Login Here</h1>
+
+        <?php if (isset($error_user) && $error_user): ?>
+            <p style="color: red; text-align: center; font-style: italic;">User Tidak Bisa Login!</p>
+        <?php endif; ?>
 
         <?php if (isset($error) && $error): ?>
             <p style="color: red; text-align: center; font-style: italic;">Username atau Password salah!</p>

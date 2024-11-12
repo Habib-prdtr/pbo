@@ -18,7 +18,7 @@ class modelRole{
 private function initializeDefaultRole(){ // perbaikan penamaan metode
     $this->addRole("Admin", "Administrator", 1);
     $this->addRole("User", "Costumer/member", 1);
-    $this->addRole("Kasir", "Pembayaran", 0);
+    $this->addRole("Kasir", "Pembayaran", 1);
 }
 
 

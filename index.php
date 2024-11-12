@@ -18,7 +18,13 @@ if (isset($_GET['modul'])) {
 
 switch ($modul) {
     case 'dashboard':
-        header("Location: index.php?modul=role");
+        $role_id = $_SESSION['role_id'];
+        if ($role_id == 1) {
+            header("Location: index.php?modul=role");
+        }else if($role_id == 3){
+            header("Location: index.php?modul=transaksi&fitur=add");
+        }
+        
         // include 'views/kosong.php';
         break;
     
@@ -200,7 +206,8 @@ case 'user':
                         // Ambil ID customer dari POST
                         $customer_id = $_POST['customer'];
                         $Customer = $obj_user->getUserById($customer_id);
-                        $Kasir = $obj_user->getUserById(3); // Asumsi kasir dengan ID 1
+                        $kasir_username = $_SESSION['username'];
+                        $Kasir = $obj_user->getUserByName($kasir_username); 
         
                         // Validasi apakah customer dan kasir ditemukan
                         if ($Customer && $Kasir) {

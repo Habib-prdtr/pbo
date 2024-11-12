@@ -26,7 +26,7 @@
                     <!-- Username -->
                     <div class="mb-4">
                         <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
-                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Masukkan Username" required>
+                        <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" autocomplete="off" placeholder="Masukkan Username" required>
                     </div>
 
                     <!-- Password -->
