@@ -28,6 +28,7 @@ class UserModel {
         $this->addUser ('Raiden', 'raiden123', 2); // User
         $this->addUser ('Freda', 'freda123', 3); // Kasir
         $this->addUser ('Rimuru', 'rimuru123', 3); // Kasir
+        $this->addUser ('Gilgamesh', 'gilgamesh123', 4); // Kasir
     }
 
     public function addUser ($user_name, $user_password, $role_id) {

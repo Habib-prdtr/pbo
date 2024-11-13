@@ -19,7 +19,7 @@ if (isset($_GET['modul'])) {
 switch ($modul) {
     case 'dashboard':
         $role_id = $_SESSION['role_id'];
-        if ($role_id == 1) {
+        if ($role_id == 1 || $role_id == 4) {
             header("Location: index.php?modul=role");
         }else if($role_id == 3){
             header("Location: index.php?modul=transaksi&fitur=add");

@@ -19,6 +19,7 @@ private function initializeDefaultRole(){ // perbaikan penamaan metode
     $this->addRole("Admin", "Administrator", 1);
     $this->addRole("User", "Costumer/member", 1);
     $this->addRole("Kasir", "Pembayaran", 1);
+    $this->addRole("SuperAdmin", "Owner", 1);
 }
 
 
